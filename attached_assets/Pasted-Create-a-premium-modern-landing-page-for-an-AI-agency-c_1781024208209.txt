@@ -1,0 +1,194 @@
+Create a premium modern landing page for an AI agency called "Araxigen".
+
+The agency builds AI solutions for businesses including:
+- AI Receptionists
+- AI Chatbots
+- AI Automation Systems
+- AI Websites
+- Custom AI Applications
+
+The website should feel like a high-end technology company but still approachable and trustworthy. The target audience is business owners who want to automate operations and improve customer experience.
+
+Design style:
+- Modern SaaS aesthetic
+- Minimal, clean, premium
+- Dark theme with subtle gradients
+- Smooth animations
+- Professional typography
+- Lots of whitespace
+- Glassmorphism elements
+- Tech-inspired visuals
+- Mobile responsive
+
+Structure:
+
+1. HERO SECTION
+
+Headline:
+"Build Smarter Businesses With AI"
+
+Subheadline:
+"We build AI-powered receptionists, automation systems, websites and custom applications that help businesses save time, capture more leads, and deliver better customer experiences."
+
+Buttons:
+Primary:
+"Book a Free Consultation"
+
+Secondary:
+"View Our Work"
+
+Add a futuristic AI dashboard visual showing:
+- chatbot interface
+- automation workflow
+- analytics
+
+---
+
+2. SERVICES SECTION
+
+Title:
+"AI Solutions For Modern Businesses"
+
+Create 4 service cards:
+
+AI Receptionists
+Description:
+"24/7 AI assistants that answer customer questions, qualify leads, and schedule appointments."
+
+AI Chatbots
+Description:
+"Smart website assistants that engage visitors and help convert them into customers."
+
+AI Automation
+Description:
+"Automate repetitive tasks and connect your business workflows."
+
+AI Websites & Apps
+Description:
+"Custom websites and applications powered by AI technology."
+
+---
+
+3. PORTFOLIO SECTION
+
+Title:
+"Featured AI Builds"
+
+Create project cards:
+
+Dental AI Receptionist
+Description:
+"AI assistant that answers patient questions and helps schedule appointments."
+
+Real Estate AI Agent
+Description:
+"AI system that qualifies leads and helps customers find properties."
+
+Restaurant AI Assistant
+Description:
+"AI assistant for menus, reservations, and customer support."
+
+Ecommerce AI Support Bot
+Description:
+"AI customer service assistant for online stores."
+
+Add buttons:
+"View Demo"
+
+Label projects as:
+"Demo Project"
+
+---
+
+4. HOW IT WORKS SECTION
+
+Title:
+"How We Build AI Systems"
+
+Create 3 steps:
+
+1. Understand
+"We analyze your business and identify where AI can create value."
+
+2. Build
+"We design and develop a custom AI solution for your needs."
+
+3. Launch
+"We deploy, optimize, and improve your AI system."
+
+---
+
+5. WHY CHOOSE US SECTION
+
+Title:
+"Why Businesses Choose AI"
+
+Cards:
+
+Save Time
+"Automate repetitive tasks and focus on growth."
+
+Better Customer Experience
+"Provide instant responses anytime."
+
+Capture More Leads
+"Never miss a potential customer."
+
+Scale Faster
+"Grow without adding unnecessary workload."
+
+---
+
+6. INDUSTRIES SECTION
+
+Title:
+"AI Solutions For Every Industry"
+
+Display:
+
+Healthcare
+Restaurants
+Real Estate
+Ecommerce
+Fitness
+Education
+Local Businesses
+
+---
+
+7. ABOUT SECTION
+
+Title:
+"Building The Future With AI"
+
+Text:
+"Araxigen creates practical AI systems that help businesses automate everyday tasks, improve customer interactions, and operate more efficiently."
+
+Keep it founder-friendly and trustworthy, not corporate.
+
+---
+
+8. CONTACT CTA SECTION
+
+Headline:
+"Ready To Automate Your Business?"
+
+Text:
+"Start building your AI-powered business today."
+
+Button:
+"Get Started"
+
+---
+
+Footer:
+Include:
+Araxigen
+Services
+Portfolio
+Contact
+LinkedIn
+Email
+
+Overall goal:
+Make visitors trust Araxigen as a real AI agency capable of building professional AI products. The website should focus on business outcomes, not just technology.

@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "K6jVzJHBpmjkqZPmPAQGu"
+uri = "file://artifacts/araxigen/public/hero-dashboard.png"
+type = "image"
+title = "AI dashboard hero visual"
