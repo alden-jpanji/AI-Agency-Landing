@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
 import { ChevronRight, MessageSquare, Workflow, Globe, Smartphone, Play, Zap, Users, Target, TrendingUp, Linkedin, Mail } from "lucide-react";
+import logoSrc from "./assets/logo.png";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -36,11 +37,8 @@ function LandingPage() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-background/50 backdrop-blur-lg">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center border border-primary/50">
-              <Zap className="w-4 h-4 text-primary" />
-            </div>
-            <span className="font-bold text-xl tracking-tight">Araxigen</span>
+          <div className="flex items-center">
+            <img src={logoSrc} alt="Araxigen" className="h-10 w-auto brightness-0 invert" />
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             <a href="#services" className="hover:text-foreground transition-colors">Services</a>
@@ -320,11 +318,8 @@ function LandingPage() {
       {/* Footer */}
       <footer className="py-12 border-t border-white/10 bg-background mt-12">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded bg-primary/20 flex items-center justify-center border border-primary/50">
-              <Zap className="w-3 h-3 text-primary" />
-            </div>
-            <span className="font-bold text-lg tracking-tight text-foreground/80">Araxigen</span>
+          <div className="flex items-center">
+            <img src={logoSrc} alt="Araxigen" className="h-8 w-auto brightness-0 invert opacity-80" />
           </div>
           
           <div className="flex items-center gap-8 text-sm text-muted-foreground">
