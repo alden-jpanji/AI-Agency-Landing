@@ -148,10 +148,16 @@ function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: "Dental AI Receptionist", desc: "AI assistant that answers patient questions and helps schedule appointments." },
-              { title: "Real Estate AI Agent", desc: "AI system that qualifies leads and helps customers find properties." },
-              { title: "Restaurant AI Assistant", desc: "AI assistant for menus, reservations, and customer support." },
-              { title: "Ecommerce AI Support Bot", desc: "AI customer service assistant for online stores." }
+              {
+                title: "Dental AI Voice Receptionist",
+                desc: "AI receptionist for dental clinics that answers patient questions, handles FAQs, and helps schedule appointments.",
+                href: "https://agent.retellai.com/orb/agent_571ba3c42e1fd1b804dc40d665?token=3a4d6fc1f82a24eb3ae263acc35e3271"
+              },
+              {
+                title: "Real Estate AI Assistant",
+                desc: "AI chatbot that helps users find properties, answers questions, qualifies leads, and collects customer information.",
+                href: "https://studio.botpress.cloud/0a8f46d0-21e0-46bf-9830-b958789e2997/home?_gl=1*otph75*_gcl_aw*R0NMLjE3ODEwMjUyNTQuQ2p3S0NBanc4NTdSQmhBZ0Vpd0FJLTF5S0NRd3dmQi1CUFpEMi13RWhZNThHYTcweGVOdzdqOEZNT05aUXUycU45cDM4THQ1dFJFRUJCb0NhUTRRQXZEX0J3RQ..*_gcl_au*MTEzMjUzMTMxMC4xNzgxMDI1MjM4*_ga*MTE5ODM4MjgxNC4xNzgxMDI1MjM5*_ga_HKHSWES9V9*czE3ODEwMjUyMzgkbzEkZzEkdDE3ODEwMjU0MDIkajIxJGwwJGg0OTcyNjQ3NDI."
+              }
             ].map((project, i) => (
               <motion.div 
                 key={i}
@@ -164,15 +170,26 @@ function LandingPage() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
                 <div className="flex justify-between items-start mb-6">
                   <span className="text-xs font-mono px-3 py-1 bg-white/5 rounded-full border border-white/10 text-muted-foreground">Demo Project</span>
-                  <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all"
+                  >
                     <Play className="w-4 h-4 ml-1" />
-                  </button>
+                  </a>
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
                 <p className="text-muted-foreground mb-8">{project.desc}</p>
-                <button className="text-sm font-medium text-primary flex items-center gap-1 hover:gap-2 transition-all">
-                  View Demo <ChevronRight className="w-4 h-4" />
-                </button>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid={`button-try-demo-${i}`}
+                  className="text-sm font-medium text-primary flex items-center gap-1 hover:gap-2 transition-all"
+                >
+                  Try Demo <ChevronRight className="w-4 h-4" />
+                </a>
               </motion.div>
             ))}
           </div>
