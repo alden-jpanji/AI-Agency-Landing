@@ -87,6 +87,40 @@ function LandingPage() {
           />
           {/* Single thin vertical line — far right */}
           <div className="absolute top-0 bottom-0 w-px bg-white/[0.05]" style={{ right: "12%" }} />
+          {/* ASCII schematic */}
+          <pre
+            className="absolute select-none pointer-events-none font-mono text-white leading-relaxed hidden lg:block"
+            style={{
+              fontSize: "10px",
+              opacity: 0.09,
+              right: "6%",
+              top: "50%",
+              transform: "translateY(-50%)",
+              letterSpacing: "0.05em",
+              whiteSpace: "pre",
+            }}
+          >
+{`  ┌──────────────────────────┐
+  │   araxigen :: core v2    │
+  ├──────────────────────────┤
+  │                          │
+  │  [●] ai_receptionist     │
+  │  [●] automation_engine   │
+  │  [●] lead_intelligence   │
+  │  [●] deploy_pipeline     │
+  │  [○] custom_apps         │
+  │                          │
+  │  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  │
+  │                          │
+  │  uptime ........  99.97% │
+  │  requests .....  142.8k  │
+  │  latency .......  <200ms │
+  │  accuracy ......  99.2%  │
+  │                          │
+  │  ████████████░░░░  74%   │
+  │                          │
+  └──────────────────────────┘`}
+          </pre>
         </div>
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 pt-40 pb-24">
