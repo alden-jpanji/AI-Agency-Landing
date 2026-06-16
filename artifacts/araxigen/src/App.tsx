@@ -460,28 +460,29 @@ function LandingPage() {
               </div>
             </motion.div>
 
-            {/* Right — form */}
+            {/* Right — form in white box */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}
               variants={slideRight}
             >
+              <div className="bg-white text-black px-10 py-10">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="flex flex-col justify-center h-full py-16"
+                  className="flex flex-col justify-center py-16"
                 >
-                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-8">
-                    <ArrowUpRight className="w-5 h-5 text-white/60" />
+                  <div className="w-12 h-12 rounded-full border border-black/20 flex items-center justify-center mb-8">
+                    <ArrowUpRight className="w-5 h-5 text-black/50" />
                   </div>
-                  <h3 className="text-2xl font-light mb-4">Message sent.</h3>
-                  <p className="text-white/40 text-base leading-[1.7]">
+                  <h3 className="text-2xl font-light mb-4 text-black">Message sent.</h3>
+                  <p className="text-black/50 text-base leading-[1.7]">
                     Your email client should open with your message ready. We'll reply within 24 hours.
                   </p>
                   <button
                     onClick={() => { setSubmitted(false); setForm({ name: "", email: "", company: "", message: "" }); }}
-                    className="mt-10 text-[11px] uppercase tracking-[0.18em] text-white/30 hover:text-white transition-colors self-start"
+                    className="mt-10 text-[11px] uppercase tracking-[0.18em] text-black/30 hover:text-black transition-colors self-start"
                   >
                     Send another
                   </button>
@@ -491,65 +492,65 @@ function LandingPage() {
                   {/* Name + Email row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
                     {/* Name */}
-                    <div className="group border-b border-white/12 sm:border-r sm:border-r-white/12 py-6 pr-0 sm:pr-8">
-                      <label className="block text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3 font-normal">
-                        Name <span className="text-white/20">*</span>
+                    <div className="border-b border-black/10 sm:border-r sm:border-r-black/10 py-6 pr-0 sm:pr-8">
+                      <label className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-3 font-normal">
+                        Name <span className="text-black/25">*</span>
                       </label>
                       <input
                         type="text"
                         value={form.name}
                         onChange={e => { setForm(f => ({ ...f, name: e.target.value })); setErrors(er => ({ ...er, name: undefined })); }}
                         placeholder="Your name"
-                        className="w-full bg-transparent text-white placeholder-white/20 text-base font-light outline-none"
+                        className="w-full bg-transparent text-black placeholder-black/25 text-base font-light outline-none"
                       />
-                      {errors.name && <p className="text-white/40 text-[10px] mt-2 uppercase tracking-wider">{errors.name}</p>}
+                      {errors.name && <p className="text-black/40 text-[10px] mt-2 uppercase tracking-wider">{errors.name}</p>}
                     </div>
                     {/* Email */}
-                    <div className="border-b border-white/12 py-6 sm:pl-8">
-                      <label className="block text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3 font-normal">
-                        Email <span className="text-white/20">*</span>
+                    <div className="border-b border-black/10 py-6 sm:pl-8">
+                      <label className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-3 font-normal">
+                        Email <span className="text-black/25">*</span>
                       </label>
                       <input
                         type="email"
                         value={form.email}
                         onChange={e => { setForm(f => ({ ...f, email: e.target.value })); setErrors(er => ({ ...er, email: undefined })); }}
                         placeholder="you@company.com"
-                        className="w-full bg-transparent text-white placeholder-white/20 text-base font-light outline-none"
+                        className="w-full bg-transparent text-black placeholder-black/25 text-base font-light outline-none"
                       />
-                      {errors.email && <p className="text-white/40 text-[10px] mt-2 uppercase tracking-wider">{errors.email}</p>}
+                      {errors.email && <p className="text-black/40 text-[10px] mt-2 uppercase tracking-wider">{errors.email}</p>}
                     </div>
                   </div>
                   {/* Company */}
-                  <div className="border-b border-white/12 py-6">
-                    <label className="block text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3 font-normal">Company</label>
+                  <div className="border-b border-black/10 py-6">
+                    <label className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-3 font-normal">Company</label>
                     <input
                       type="text"
                       value={form.company}
                       onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
                       placeholder="Optional"
-                      className="w-full bg-transparent text-white placeholder-white/20 text-base font-light outline-none"
+                      className="w-full bg-transparent text-black placeholder-black/25 text-base font-light outline-none"
                     />
                   </div>
                   {/* Message */}
-                  <div className="border-b border-white/12 py-6">
-                    <label className="block text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3 font-normal">
-                      Message <span className="text-white/20">*</span>
+                  <div className="border-b border-black/10 py-6">
+                    <label className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-3 font-normal">
+                      Message <span className="text-black/25">*</span>
                     </label>
                     <textarea
                       rows={5}
                       value={form.message}
                       onChange={e => { setForm(f => ({ ...f, message: e.target.value })); setErrors(er => ({ ...er, message: undefined })); }}
                       placeholder="Tell us about your project…"
-                      className="w-full bg-transparent text-white placeholder-white/20 text-base font-light outline-none resize-none leading-[1.7]"
+                      className="w-full bg-transparent text-black placeholder-black/25 text-base font-light outline-none resize-none leading-[1.7]"
                     />
-                    {errors.message && <p className="text-white/40 text-[10px] mt-1 uppercase tracking-wider">{errors.message}</p>}
+                    {errors.message && <p className="text-black/40 text-[10px] mt-1 uppercase tracking-wider">{errors.message}</p>}
                   </div>
                   {/* Submit */}
                   <div className="pt-10">
                     <motion.button
                       type="submit"
                       data-testid="button-cta-get-started"
-                      className="inline-flex items-center gap-2 px-8 py-3.5 rounded-[75px] bg-white text-black text-xs uppercase tracking-[0.15em] font-normal cursor-pointer"
+                      className="inline-flex items-center gap-2 px-8 py-3.5 rounded-[75px] bg-black text-white text-xs uppercase tracking-[0.15em] font-normal cursor-pointer"
                       whileHover={{ scale: 1.04 }}
                       whileTap={{ scale: 0.97 }}
                     >
@@ -558,6 +559,7 @@ function LandingPage() {
                   </div>
                 </form>
               )}
+              </div>
             </motion.div>
 
           </div>
