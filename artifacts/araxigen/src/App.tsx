@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MessageSquare, Workflow, Globe, Smartphone, Play, Zap, Users, Target, TrendingUp, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { MessageSquare, Workflow, Globe, Smartphone, Play, Zap, Users, Target, TrendingUp, Linkedin, Facebook, Instagram, Twitter, Mail, ArrowUpRight } from "lucide-react";
 import logoSrc from "./assets/logo.png";
 import NotFound from "@/pages/not-found";
 
@@ -452,11 +452,17 @@ function LandingPage() {
             <a href="#contact"   className="hover:text-white transition-colors">Contact</a>
           </div>
           <div className="flex items-center gap-5">
-            <a href="#" className="text-white/25 hover:text-white transition-colors">
+            <a href="https://www.facebook.com/profile.php?id=61550763885137" target="_blank" rel="noopener noreferrer" className="text-white/25 hover:text-white transition-colors">
+              <Facebook className="w-4 h-4" strokeWidth={1.5} />
+            </a>
+            <a href="https://www.linkedin.com/in/araxigen-ai-88749b316" target="_blank" rel="noopener noreferrer" className="text-white/25 hover:text-white transition-colors">
               <Linkedin className="w-4 h-4" strokeWidth={1.5} />
             </a>
-            <a href="#" className="text-white/25 hover:text-white transition-colors">
-              <Mail className="w-4 h-4" strokeWidth={1.5} />
+            <a href="https://www.instagram.com/araxigen.ai/" target="_blank" rel="noopener noreferrer" className="text-white/25 hover:text-white transition-colors">
+              <Instagram className="w-4 h-4" strokeWidth={1.5} />
+            </a>
+            <a href="https://x.com/araxigen" target="_blank" rel="noopener noreferrer" className="text-white/25 hover:text-white transition-colors">
+              <Twitter className="w-4 h-4" strokeWidth={1.5} />
             </a>
           </div>
         </div>
