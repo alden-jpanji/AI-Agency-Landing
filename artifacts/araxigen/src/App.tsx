@@ -429,7 +429,7 @@ function LandingPage() {
             Start building your AI-powered business today.
           </motion.p>
           <motion.a
-            href="mailto:hello@araxigen.com"
+            href="mailto:araxigen@gmail.com"
             data-testid="button-cta-get-started"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-[75px] bg-white text-black text-xs uppercase tracking-[0.15em] font-normal"
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
@@ -464,6 +464,9 @@ function LandingPage() {
             <a href="https://x.com/araxigen" target="_blank" rel="noopener noreferrer" className="text-white/25 hover:text-white transition-colors">
               <Twitter className="w-4 h-4" strokeWidth={1.5} />
             </a>
+            <a href="mailto:araxigen@gmail.com" className="text-white/25 hover:text-white transition-colors">
+              <Mail className="w-4 h-4" strokeWidth={1.5} />
+            </a>
           </div>
         </div>
         <div className="max-w-[1440px] mx-auto px-8 mt-8">
@@ -472,6 +475,42 @@ function LandingPage() {
           </p>
         </div>
       </footer>
+
+      {/* ── Floating Social Sidebar ── */}
+      <motion.div
+        className="fixed right-5 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-center gap-1"
+        initial={{ x: 80, opacity: 0 }}
+        animate={{ x: scrolled ? 0 : 80, opacity: scrolled ? 1 : 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="flex flex-col items-center gap-0.5 bg-black/75 backdrop-blur-md border border-white/10 rounded-[20px] p-2">
+          {[
+            { href: "https://www.facebook.com/profile.php?id=61550763885137", icon: Facebook,  label: "Facebook"  },
+            { href: "https://www.linkedin.com/in/araxigen-ai-88749b316",      icon: Linkedin,  label: "LinkedIn"  },
+            { href: "https://www.instagram.com/araxigen.ai/",                 icon: Instagram, label: "Instagram" },
+            { href: "https://x.com/araxigen",                                 icon: Twitter,   label: "X"         },
+            { href: "mailto:araxigen@gmail.com",                              icon: Mail,      label: "Email"     },
+          ].map(({ href, icon: Icon, label }, i) => (
+            <motion.a
+              key={i}
+              href={href}
+              target={href.startsWith("mailto") ? undefined : "_blank"}
+              rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+              aria-label={label}
+              className="w-9 h-9 flex items-center justify-center rounded-[14px] text-white/30 hover:text-white hover:bg-white/8 transition-colors group relative"
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.92 }}
+              transition={{ type: "spring", stiffness: 350, damping: 20 }}
+            >
+              <Icon className="w-[15px] h-[15px]" strokeWidth={1.5} />
+              {/* Tooltip */}
+              <span className="absolute right-full mr-3 px-2.5 py-1 rounded-[8px] bg-black/90 border border-white/10 text-white text-[10px] tracking-[0.12em] uppercase whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                {label}
+              </span>
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
 
     </div>
   );
