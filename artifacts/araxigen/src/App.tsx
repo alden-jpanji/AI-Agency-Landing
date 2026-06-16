@@ -20,6 +20,68 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } }
 };
 
+function AsciiStats() {
+  const [requests, setRequests] = useState(142.8);
+  const [latency, setLatency]   = useState(186);
+  const [accuracy, setAccuracy] = useState(99.2);
+  const [filled, setFilled]     = useState(11);
+  const [cursor, setCursor]     = useState(true);
+
+  useEffect(() => {
+    const stats = setInterval(() => {
+      setRequests(r  => parseFloat((r + Math.random() * 0.4).toFixed(1)));
+      setLatency(Math.floor(170 + Math.random() * 45));
+      setAccuracy(parseFloat((99.0 + Math.random() * 0.9).toFixed(1)));
+      setFilled(Math.floor(8 + Math.random() * 6));
+    }, 2500);
+    const blink = setInterval(() => setCursor(c => !c), 600);
+    return () => { clearInterval(stats); clearInterval(blink); };
+  }, []);
+
+  const bar = "█".repeat(filled) + "░".repeat(16 - filled);
+  const pct = String(Math.round(filled / 16 * 100)).padStart(2, " ");
+  const req = requests.toFixed(1).padStart(5, " ");
+  const lat = String(latency).padStart(3, " ");
+  const acc = accuracy.toFixed(1).padStart(4, " ");
+  const cur = cursor ? "▋" : " ";
+
+  return (
+    <pre
+      className="absolute select-none pointer-events-none font-mono text-white leading-relaxed hidden lg:block"
+      style={{
+        fontSize: "10px",
+        opacity: 0.09,
+        right: "6%",
+        top: "50%",
+        transform: "translateY(-50%)",
+        letterSpacing: "0.05em",
+        whiteSpace: "pre",
+      }}
+    >
+{`  ┌──────────────────────────┐
+  │   araxigen :: core v2 ${cur}  │
+  ├──────────────────────────┤
+  │                          │
+  │  [●] ai_receptionist     │
+  │  [●] automation_engine   │
+  │  [●] lead_intelligence   │
+  │  [●] deploy_pipeline     │
+  │  [○] custom_apps         │
+  │                          │
+  │  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  │
+  │                          │
+  │  uptime ........  99.97% │
+  │  requests .....  ${req}k  │
+  │  latency .......  <${lat}ms │
+  │  accuracy ......  ${acc}%  │
+  │                          │
+  │  ${bar}  ${pct}%   │
+  │                          │
+  └──────────────────────────┘`}
+    </pre>
+  );
+}
+
 function LandingPage() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -87,40 +149,8 @@ function LandingPage() {
           />
           {/* Single thin vertical line — far right */}
           <div className="absolute top-0 bottom-0 w-px bg-white/[0.05]" style={{ right: "12%" }} />
-          {/* ASCII schematic */}
-          <pre
-            className="absolute select-none pointer-events-none font-mono text-white leading-relaxed hidden lg:block"
-            style={{
-              fontSize: "10px",
-              opacity: 0.09,
-              right: "6%",
-              top: "50%",
-              transform: "translateY(-50%)",
-              letterSpacing: "0.05em",
-              whiteSpace: "pre",
-            }}
-          >
-{`  ┌──────────────────────────┐
-  │   araxigen :: core v2    │
-  ├──────────────────────────┤
-  │                          │
-  │  [●] ai_receptionist     │
-  │  [●] automation_engine   │
-  │  [●] lead_intelligence   │
-  │  [●] deploy_pipeline     │
-  │  [○] custom_apps         │
-  │                          │
-  │  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  │
-  │                          │
-  │  uptime ........  99.97% │
-  │  requests .....  142.8k  │
-  │  latency .......  <200ms │
-  │  accuracy ......  99.2%  │
-  │                          │
-  │  ████████████░░░░  74%   │
-  │                          │
-  └──────────────────────────┘`}
-          </pre>
+          {/* ASCII schematic — animated */}
+          <AsciiStats />
         </div>
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 pt-40 pb-24">
