@@ -74,13 +74,19 @@ function LandingPage() {
 
       {/* ── Hero — Black Immersive Frame ── */}
       <section className="relative bg-black text-white min-h-screen flex flex-col justify-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/hero-dashboard.png"
-            alt=""
-            className="w-full h-full object-cover opacity-15"
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Large ring — top-right quadrant */}
+          <div
+            className="absolute rounded-full border border-white/[0.06]"
+            style={{ width: "70vw", height: "70vw", top: "-15vw", right: "-18vw" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
+          {/* Smaller inner ring */}
+          <div
+            className="absolute rounded-full border border-white/[0.04]"
+            style={{ width: "42vw", height: "42vw", top: "2vw", right: "-4vw" }}
+          />
+          {/* Single thin vertical line — far right */}
+          <div className="absolute top-0 bottom-0 w-px bg-white/[0.05]" style={{ right: "12%" }} />
         </div>
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 pt-40 pb-24">
